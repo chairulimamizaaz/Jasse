@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chairul Imam Izaaz</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      background:#050505;
+      font-family:'Segoe UI',sans-serif;
+      color:white;
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Background Glow */
+
+    body::before{
+      content:'';
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:rgba(92,159,246,0.14);
+      border-radius:50%;
+      filter:blur(140px);
+      top:-120px;
+      left:-120px;
+      animation:floatGlow 10s infinite alternate ease-in-out;
+    }
+
+    body::after{
+      content:'';
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:rgba(92,159,246,0.08);
+      border-radius:50%;
+      filter:blur(120px);
+      bottom:-100px;
+      right:-100px;
+      animation:floatGlow2 12s infinite alternate ease-in-out;
+    }
+
+    @keyframes floatGlow{
+
+      from{
+        transform:translateY(0) translateX(0);
+      }
+
+      to{
+        transform:translateY(60px) translateX(40px);
+      }
+
+    }
+
+    @keyframes floatGlow2{
+
+      from{
+        transform:translateY(0) translateX(0);
+      }
+
+      to{
+        transform:translateY(-50px) translateX(-40px);
+      }
+
+    }
+
+    /* Container */
+
+    .container{
+      z-index:1;
+      text-align:center;
+      padding:20px;
+      animation:fadeIn 1.5s ease;
+    }
+
+    /* Name */
+
+    h1{
+      font-size:5rem;
+      font-weight:900;
+      margin-bottom:20px;
+
+      background:linear-gradient(
+        90deg,
+        #7aaef8,
+        #5c9ff6,
+        #6fb8ff,
+        #7aaef8
+      );
+
+      background-size:250% auto;
+
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      animation:smoothGradient 8s ease infinite;
+
+      text-shadow:
+        0 0 10px rgba(92,159,246,0.15),
+        0 0 20px rgba(92,159,246,0.08);
+    }
+
+    @keyframes smoothGradient{
+
+      0%{
+        background-position:0% 50%;
+      }
+
+      50%{
+        background-position:100% 50%;
+      }
+
+      100%{
+        background-position:0% 50%;
+      }
+
+    }
+
+    /* Title */
+
+    .title{
+      color:#9ca3af;
+      font-size:1.25rem;
+      margin-bottom:50px;
+      line-height:1.8;
+      animation:fadeUp 1.5s ease;
+    }
+
+    /* Social */
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:22px;
+      animation:fadeUp 2s ease;
+    }
+
+    .socials a{
+      width:70px;
+      height:70px;
+      border-radius:50%;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.08);
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      color:#5c9ff6;
+      text-decoration:none;
+      font-size:1.6rem;
+
+      backdrop-filter:blur(10px);
+
+      transition:0.35s ease;
+
+      position:relative;
+      overflow:hidden;
+    }
+
+    .socials a::before{
+      content:'';
+      position:absolute;
+      width:100%;
+      height:100%;
+      background:linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+      );
+
+      top:-100%;
+      left:-100%;
+
+      transition:0.5s;
+    }
+
+    .socials a:hover::before{
+      top:100%;
+      left:100%;
+    }
+
+    .socials a:hover{
+      transform:translateY(-10px) scale(1.08);
+
+      background:#5c9ff6;
+      color:white;
+
+      box-shadow:
+        0 0 20px rgba(92,159,246,0.35),
+        0 0 40px rgba(92,159,246,0.15);
+    }
+
+    /* Footer */
+
+    footer{
+      position:absolute;
+      bottom:25px;
+
+      color:#6b7280;
+      font-size:0.9rem;
+      letter-spacing:1px;
+
+      animation:fadeIn 2.5s ease;
+
+      z-index:1;
+    }
+
+    /* Animations */
+
+    @keyframes fadeIn{
+
+      from{
+        opacity:0;
+      }
+
+      to{
+        opacity:1;
+      }
+
+    }
+
+    @keyframes fadeUp{
+
+      from{
+        opacity:0;
+        transform:translateY(30px);
+      }
+
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+
+    }
+
+    /* Mobile */
+
+    @media(max-width:768px){
+
+      h1{
+        font-size:2.8rem;
+      }
+
+      .title{
+        font-size:1rem;
+        padding:0 10px;
+      }
+
+      .socials{
+        gap:15px;
+      }
+
+      .socials a{
+        width:58px;
+        height:58px;
+        font-size:1.3rem;
+      }
+
+      footer{
+        font-size:0.8rem;
+        text-align:center;
+        padding:0 20px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>
+      Chairul Imam Izaaz
+    </h1>
+
+    <p class="title">
+      Salesforce Consultant • Automation Engineer <br>
+      Data Enthusiast • Cloud Enthusiast
+    </p>
+
+    <div class="socials">
+
+      <a href="https://github.com/chairulimamizaaz" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/chairul-imam-izaaz-a1177221a/" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="https://wa.me/6282122619046" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+      <a href="mailto:salesforce@jasse.cloud">
+        <i class="fas fa-envelope"></i>
+      </a>
+
+      <a href="https://www.salesforce.com/trailblazer/odgmclf81lyb3il5kl" target="_blank">
+        <i class="fas fa-cloud"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+  <footer>
+    © 2026 Jasse Cloud
+  </footer>
+
+</body>
+</html>
